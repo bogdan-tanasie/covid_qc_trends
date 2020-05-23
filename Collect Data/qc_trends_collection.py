@@ -21,7 +21,7 @@ pd.set_option('display.width', None)
 pytrends = TrendReq(hl='en-US', tz=360)
 
 # Set time and location
-timeframe = '2020-01-01 2020-05-14'
+timeframe = '2020-01-01 2020-05-21'
 geo = 'CA-QC'
 
 #############################################
@@ -59,7 +59,7 @@ res.T.to_csv('political_parties.csv', mode='a', header=True)
 #############################################
 
 print('3 dating')
-keywords = ['Dating apps', 'tinder', 'bumble', 'happn', 'Hinge', 'online dating', 'Facebook dating', 'coffee meets bagel', 'sugar daddy', 'OKCupid']
+keywords = ['dating apps', 'Tinder', 'Bumble', 'Happn', 'Hinge', 'online dating', 'Facebook dating', 'Coffee Meets Bagel', 'sugar daddy', 'OKCupid']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -75,7 +75,7 @@ res.T.to_csv('dating.csv', mode='a', header=True)
 #############################################
 
 print('4 software')
-keywords = ['Photoshop', 'Adobe', 'winrar', 'Java', 'vlc	', 'avast', 'filehippo', 'SAP', 'Shopify	', 'Zoom']
+keywords = ['Photoshop', 'Adobe', 'Winrar', 'Java', 'VLC	', 'Avast', 'Filehippo', 'SAP', 'Shopify	', 'Zoom']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -139,7 +139,7 @@ res.T.to_csv('makeup.csv', mode='a', header=True)
 #############################################
 
 print('8 hotel')
-keywords = ['expedia', 'hotels.com', 'Airbnb', 'Flighthub', 'hotel', 'Trivago', 'marriott', 'hostel', 'hotel booking', 'couchsurfing']
+keywords = ['Expedia', 'hotels.com', 'Airbnb', 'Flighthub', 'hotel', 'Trivago', 'Marriott', 'hostel', 'hotel booking', 'couchsurfing']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -157,7 +157,7 @@ res.T.to_csv('hotel.csv', mode='a', header=True)
 
 # Bahamas trip does not seem to work
 print('9 travel')
-keywords = ['Cruise', 'airplane tickets', 'road trip', 'beach vacations', 'retreats', 'Resort', 'Bahamas', 'Camping', 'World tour', 'Bike trip']
+keywords = ['cruise', 'airplane tickets', 'road trip', 'beach vacations', 'retreats', 'resort', 'Bahamas', 'camping', 'world tour', 'bike trip']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -173,7 +173,7 @@ res.T.to_csv('travel.csv', mode='a', header=True)
 #############################################
 
 print('10 cars')
-keywords = ['BMW', 'sell car', 'Car rental', 'Used Cars', 'auto trader', 'toyota	', 'electric car', 'Mercedes Benz', 'Tesla', 'car dealership']
+keywords = ['BMW', 'sell car', 'car rental', 'used Cars', 'auto trader', 'toyota	', 'electric car', 'Mercedes Benz', 'Tesla', 'car dealership']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -189,7 +189,7 @@ res.T.to_csv('cars.csv', mode='a', header=True)
 #############################################
 
 print('11 recipies')
-keywords = ['sushi', 'indian food', 'mexican food', 'asian food', 'vegetarian recipes', 'vegan', 'Easy recipes', 'Chicken recipes', 'Healthy recipes', 'fine dining']
+keywords = ['sushi', 'indian food', 'mexican food', 'asian food', 'vegetarian recipes', 'vegan', 'easy recipes', 'chicken recipes', 'healthy recipes', 'fine dining']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -205,7 +205,7 @@ res.T.to_csv('recipies.csv', mode='a', header=True)
 #############################################
 
 print('12 caffeine')
-keywords = ['Starbucks', 'Tim Hortons', 'tea', 'coffee', 'nespresso', 'cappuccino ', 'iced coffee', 'red bull', 'instant coffee', 'espresso']
+keywords = ['Starbucks', 'Tim Hortons', 'tea', 'coffee', 'Nespresso', 'cappuccino ', 'iced coffee', 'Red Bull', 'instant coffee', 'espresso']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -237,7 +237,7 @@ res.T.to_csv('politicians_personalities.csv', mode='a', header=True)
 #############################################
 
 print('14 pets')
-keywords = ['cat', 'dog', 'cat coronavirus', 'dog coronavirus', 'adopt a cat', 'adopt a dog', 'adopt a pet', 'adopt a puppy', 'Humane society', 'spca']
+keywords = ['cat', 'dog', 'cat coronavirus', 'dog coronavirus', 'adopt a cat', 'adopt a dog', 'adopt a pet', 'adopt a puppy', 'Humane Society', 'SPCA']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -269,7 +269,7 @@ res.T.to_csv('gardening.csv', mode='a', header=True)
 #############################################
 
 print('16 health')
-keywords = ['blood pressure', 'hospitals near', 'Dry Cough', 'Cancer symptoms', 'coronavirus symptoms', 'sore throat', 'HIV', 'health insurance', 'ambulance', 'fever']
+keywords = ['blood pressure', 'hospitals near', 'dry cough', 'cancer symptoms', 'coronavirus symptoms', 'sore throat', 'HIV', 'health insurance', 'ambulance', 'fever']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -285,7 +285,7 @@ res.T.to_csv('health.csv', mode='a', header=True)
 #############################################
 
 print('17 jobs')
-keywords = ['indeed', 'layoff', 'linkedin', 'jobless', 'Internship', 'placement', 'EI', 'employment insurance', 'laid off', 'unemployment']
+keywords = ['Indeed', 'layoff', 'Linkedin', 'jobless', 'internship', 'placement', 'EI', 'employment insurance', 'laid off', 'unemployment']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -301,7 +301,7 @@ res.T.to_csv('jobs.csv', mode='a', header=True)
 #############################################
 
 print('18 environment')
-keywords = ['solar energy', 'climate change', 'Global warming', 'pollution', 'Greta', 'Recycling	', 'Waste', 'sustainability' , 'us epa', 'covid pollution']
+keywords = ['solar energy', 'climate change', 'global warming', 'pollution', 'Greta', 'recycling	', 'waste', 'sustainability' , 'us epa', 'covid pollution']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -317,7 +317,7 @@ res.T.to_csv('environment.csv', mode='a', header=True)
 #############################################
 
 print('19 skin care')
-keywords = ['Facial mask', 'Dry Skin', 'kylie skin', 'lumin skin', 'best skin care', 'Toners', 'hand moisturizer', 'dry hands', 'pimples', 'men skin care']
+keywords = ['facial mask', 'dry skin', 'kylie skin', 'lumin skin', 'best skin care', 'toners', 'hand moisturizer', 'dry hands', 'pimples', 'men skin care']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -349,7 +349,7 @@ res.T.to_csv('finance.csv', mode='a', header=True)
 #############################################
 
 print('21 home_issues')
-keywords = ['daycare', 'Homeschooling', 'child abuse', 'domestic violence', 'divorce', 'separation', 'home issues', 'custody', 'pregnant', 'condom']
+keywords = ['daycare', 'homeschooling', 'child abuse', 'domestic violence', 'divorce', 'separation', 'home issues', 'custody', 'pregnant', 'condom']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -365,7 +365,7 @@ res.T.to_csv('home_issues.csv', mode='a', header=True)
 #############################################
 
 print('22 activities')
-keywords = ['theatre', 'cinema', 'clubs', 'bars', 'restaurants', 'massage', 'spa	', 'cooking', 'hiking', 'Cabane a sucre']
+keywords = ['theatre', 'cinema', 'clubs', 'bars', 'restaurants', 'massage', 'spa	', 'cooking', 'hiking', 'cabane a sucre']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -413,7 +413,7 @@ res.T.to_csv('food.csv', mode='a', header=True)
 #############################################
 
 print('25 sports teams/leagues')
-keywords = ['Habs', 'Montreal Impact', 'MLS', 'NBA', 'Stanley Cup', 'NHL	', 'CFL', 'curling', 'Cycling', 'MMA']
+keywords = ['Habs', 'Montreal Impact', 'MLS', 'NBA', 'Stanley Cup', 'NHL	', 'CFL', 'curling', 'cycling', 'MMA']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -429,7 +429,7 @@ res.T.to_csv('sports_teams_leagues.csv', mode='a', header=True)
 #############################################
 
 print('26 movie genre')
-keywords = ['Comedy', 'romantic', 'thriller', 'Science Fiction', 'horror', 'documentary', 'adventure', 'mystery', 'drama	', 'action']
+keywords = ['comedy', 'romantic', 'thriller', 'science fiction', 'horror', 'documentary', 'adventure', 'mystery', 'drama	', 'action']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -477,7 +477,7 @@ res.T.to_csv('relationship.csv', mode='a', header=True)
 #############################################
 
 print('29 education')
-keywords = ['Medical school', 'McGill', 'student loan', 'HEC Montreal', 'Law School', 'student jobs', 'cegep', 'UQAM', 'concordia', 'UdeM']
+keywords = ['medical school', 'McGill', 'student loan', 'HEC Montreal', 'Law School', 'student jobs', 'CEGEP', 'UQAM', 'Concordia', 'UdeM']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -493,7 +493,7 @@ res.T.to_csv('education.csv', mode='a', header=True)
 #############################################
 
 print('30 housing')
-keywords = ['remax', 'DuProprio', 'kijiji', 'centris', 'zumper', 'realtor', 'real estate agent', 'mortgage', 'Royal Lepage', 'Sutton']
+keywords = ['Remax', 'DuProprio', 'Kijiji', 'Centris', 'Zumper', 'Realtor', 'real estate agent', 'mortgage', 'Royal Lepage', 'Sutton']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -509,7 +509,7 @@ res.T.to_csv('housing.csv', mode='a', header=True)
 #############################################
 
 print('31 news')
-keywords = ['CBC', 'ctv ', 'fox news', 'cnn', 'La Presse', 'global news', 'City News', 'TVA nouvelles', 'MTL Blog', 'montreal gazette']
+keywords = ['CBC', 'CTV ', 'Fox News', 'CNN', 'La Presse', 'Global News', 'CityNews', 'TVA Nouvelles', 'MTL Blog', 'Montreal Gazette']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -525,7 +525,7 @@ res.T.to_csv('news.csv', mode='a', header=True)
 #############################################
 
 print('32 pharmaceutical')
-keywords = ['advil', 'tylenol', 'Jean Coutu', 'Uniprix', 'hydroxychloroquine', 'pharmacy	', 'pharmaprix', 'familiprix', 'remdesivir', 'vaccine']
+keywords = ['advil', 'tylenol', 'Jean Coutu', 'Uniprix', 'hydroxychloroquine', 'pharmacy	', 'Pharmaprix', 'Familiprix', 'remdesivir', 'vaccine']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -541,7 +541,7 @@ res.T.to_csv('pharmaceutical.csv', mode='a', header=True)
 #############################################
 
 print('33 transportation')
-keywords = ['Orange line', 'Green line', 'yellow line', 'blue line', 'STM', 'uber', 'taxi', 'cab	', 'bus', 'Bixi']
+keywords = ['orange line', 'green line', 'yellow line', 'blue line', 'STM', 'uber', 'taxi', 'cab	', 'bus', 'Bixi']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -557,7 +557,7 @@ res.T.to_csv('transportation.csv', mode='a', header=True)
 #############################################
 
 print('34 clothing_stores')
-keywords = ['banana republic', 'old navy	', 'gap', 'Holt Renfrew', 'Harry Rosen', 'H&M', 'Zara', 'Neon', 'Winners', 'forever 21']
+keywords = ['Banana Republic', 'Old Navy	', 'Gap', 'Holt Renfrew', 'Harry Rosen', 'H&M', 'Zara', 'Neon', 'Winners', 'Forever 21']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -573,7 +573,7 @@ res.T.to_csv('clothing_stores.csv', mode='a', header=True)
 #############################################
 
 print('35 social_media')
-keywords = ['facebook', 'instagram', 'snapchat', 'twitter', 'wechat', 'whatsapp', 'skype', 'tik tok', 'Tumblr', 'Pinterest']
+keywords = ['Facebook', 'Instagram', 'Snapchat', 'Twitter', 'WeChat', 'WhatsApp', 'Skype', 'Tik Tok', 'Tumblr', 'Pinterest']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -589,7 +589,7 @@ res.T.to_csv('social_media.csv', mode='a', header=True)
 #############################################
 
 print('36 arts & entertainment')
-keywords = ['netflix', 'crave', 'disney+	', 'spotify', 'audible', 'prime video', 'hulu', 'Hbo', 'Apple TV	', 'Apple Music']
+keywords = ['Netflix', 'Crave', 'Disney+	', 'Spotify', 'Audible', 'Prime video', 'Hulu', 'Hbo', 'Apple TV	', 'Apple Music']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -621,7 +621,7 @@ res.T.to_csv('jewelry.csv', mode='a', header=True)
 #############################################
 
 print('38 illnesses')
-keywords = ['Allergies', 'Flu', 'Diarrhea', 'Headache', 'Stomach Ache', 'anorexia', 'vomiting', 'asthma', 'Bronchitis', 'back pain']
+keywords = ['allergies', 'flu', 'diarrhea', 'headache', 'stomach Ache', 'anorexia', 'vomiting', 'asthma', 'bronchitis', 'back pain']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -637,7 +637,7 @@ res.T.to_csv('illnesses.csv', mode='a', header=True)
 #############################################
 
 print('39 sports')
-keywords = ['soccer', 'football', 'basketball', 'swimming', 'hockey', 'golf', 'UFC', 'Ski', 'Snowboard', 'tennis']
+keywords = ['soccer', 'football', 'basketball', 'swimming', 'hockey', 'golf', 'UFC', 'Ski', 'snowboard', 'tennis']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -654,7 +654,7 @@ res.T.to_csv('sports.csv', mode='a', header=True)
 #############################################
 
 print('40 diet')
-keywords = ['blue zone diet', 'diet', 'atkins diet', 'dash diet', 'keto diet', 'weight loss', 'low carb diet', 'raw vegan', 'carnivore diet', 'plant based diet']
+keywords = ['mediterranean diet', 'diet', 'atkins diet', 'dash diet', 'keto diet', 'weight loss', 'low carb diet', 'raw vegan', 'carnivore diet', 'plant based diet']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -686,7 +686,7 @@ res.T.to_csv('charity.csv', mode='a', header=True)
 #############################################
 
 print('42 learning')
-keywords = ['learn french', 'duolingo', 'TED', 'khan academy', 'goodreads', 'translate', 'lessons', 'classes', 'online classes', 'summer courses']
+keywords = ['learn french', 'Duolingo', 'TED', 'Khan Academy', 'goodreads', 'translate', 'lessons', 'classes', 'online classes', 'summer courses']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -718,7 +718,7 @@ res.T.to_csv('hairstyle.csv', mode='a', header=True)
 #############################################
 
 print('44 games')
-keywords = ['board games', 'minecraft', 'piccolo', 'miniclip', 'online games', 'xbox', 'world of warcraft', 'Nintendo Switch', 'PlayStation', 'risk']
+keywords = ['board games', 'Minecraft', 'piccolo', 'Miniclip', 'online games', 'Xbox', 'World of Warcraft', 'Nintendo Switch', 'PlayStation', 'Risk']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -734,7 +734,7 @@ res.T.to_csv('games.csv', mode='a', header=True)
 #############################################
 
 print('45 delivery')
-keywords = ['uber eats', 'foodora', 'fedex', 'amazon prime', 'Cookit', 'Lufa', 'iga delivery', 'walmart delivery	', 'provigo delivery', 'metro delivery']
+keywords = ['Uber Eats', 'Foodora', 'Fedex', 'Amazon Prime', 'Cookit', 'Lufa', 'Iga delivery', 'Walmart delivery	', 'Provigo delivery', 'Metro delivery']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -750,7 +750,7 @@ res.T.to_csv('delivery.csv', mode='a', header=True)
 #############################################
 
 print('46 gambling')
-keywords = ['poker', 'sports betting', 'casino', 'online casino', 'bet365', 'primedice', 'betting', 'flashscore', 'blackjack', 'Vegas Casino Online']
+keywords = ['poker', 'sports betting', 'casino', 'online casino', 'Bet365', 'primedice', 'betting', 'flashscore', 'blackjack', 'Vegas Casino Online']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -782,7 +782,7 @@ res.T.to_csv('death.csv', mode='a', header=True)
 #############################################
 
 print('48 porn')
-keywords = ['bdsm porn', 'porn', 'redtube', 'youporn', 'pornhub', 'lesbian porn', 'sex', 'chaturbate', 'hentai', 'gay porn']
+keywords = ['bdsm porn', 'porn', 'Redtube', 'Youporn', 'Pornhub', 'lesbian porn', 'sex', 'Chaturbate', 'hentai', 'gay porn']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -798,7 +798,7 @@ res.T.to_csv('porn.csv', mode='a', header=True)
 #############################################
 
 print('49 feelings')
-keywords = ['Happy', 'anxiety', 'angry', 'sad', 'depression', 'horny', 'lonely', 'bored', 'Worried', 'in love']
+keywords = ['happy', 'anxiety', 'angry', 'sad', 'depression', 'horny', 'lonely', 'bored', 'worried', 'in love']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -814,7 +814,7 @@ res.T.to_csv('feelings.csv', mode='a', header=True)
 #############################################
 
 print('50 retail')
-keywords = ['walmart', 'ikea', 'target', 'home depot', 'costco', 'amazon	', 'couche tard', 'IGA', 'best buy', 'metro']
+keywords = ['Walmart', 'Ikea', 'Target', 'Home Depot', 'Costco', 'Amazon	', 'Couche Tard', 'IGA', 'Best Buy', 'Metro']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -846,7 +846,7 @@ res.T.to_csv('retail_2.csv', mode='a', header=True)
 #############################################
 
 print('52 banks')
-keywords = ['Bank of Montreal', 'Desjardins', 'Laurentian Bank', 'TD', 'CIBC', 'RBC', 'HSBC', 'Banque Nationale', 'BMO', 'bitcoin']
+keywords = ['Bank of Montreal', 'Desjardins', 'Laurentian Bank', 'TD', 'CIBC', 'RBC', 'HSBC', 'Banque Nationale', 'BMO', 'Bitcoin']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -862,7 +862,7 @@ res.T.to_csv('banks.csv', mode='a', header=True)
 #############################################
 
 print('53 alcohol')
-keywords = ['Beer', 'Wine', 'spirits', 'cocktails', 'Cider', 'Corona Beer', 'Coors', 'rum', 'drunk', 'alcoholic']
+keywords = ['beer', 'wine', 'spirits', 'cocktails', 'cider', 'Corona beer', 'Coors', 'rum', 'drunk', 'alcoholic']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -878,7 +878,7 @@ res.T.to_csv('alcohol.csv', mode='a', header=True)
 #############################################
 
 print('54 marijuana/drugs')
-keywords = ['SQDC', 'Marijuana', 'weed', 'indica	', 'sativa', 'CBD', 'hash', 'cannabis', 'edibles	', 'THC']
+keywords = ['SQDC', 'marijuana', 'weed', 'indica	', 'sativa', 'CBD', 'hash', 'cannabis', 'edibles	', 'THC']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -942,7 +942,7 @@ res.T.to_csv('kitchen_supplies.csv', mode='a', header=True)
 #############################################
 
 print('58 marketplace')
-keywords = ['kijiji', 'facebook marketplace', 'ebay', 'craigslist', 'AKC', 'ali express	', 'alibaba', 'taobao', 'etsy', 'olx']
+keywords = ['Kijiji', 'Facebook Marketplace', 'Ebay', 'Craigslist', 'AKC', 'Ali Express	', 'Alibaba', 'Taobao', 'Etsy', 'OLX']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -958,7 +958,7 @@ res.T.to_csv('marketplace.csv', mode='a', header=True)
 #############################################
 
 print('59 festivals')
-keywords = ['just for laughs', 'eventbrite', 'osheaga', 'piknic electronik', 'ticketmaster', 'jazz fest', 'mural festival', 'francos de montreal', 'Montreal Pride', 'Fringe Festival']
+keywords = ['Just For Laughs', 'Eventbrite', 'Osheaga', 'Piknic Electronik', 'Ticketmaster', 'Jazz Fest', 'Mural Festival', 'Francos de Montreal', 'Montreal Pride', 'Fringe Festival']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -1006,7 +1006,7 @@ res.T.to_csv('bathroom_supplies.csv', mode='a', header=True)
 #############################################
 
 print('62 insurance')
-keywords = ['manulife', 'sunlife', 'desjardins insurance', 'auto insurance', 'health insurance', 'life insurance	', 'geico', 'dental insurance', 'farmers insurance', 'travel insurance']
+keywords = ['Manulife', 'Sunlife', 'Desjardins insurance', 'auto insurance', 'health insurance', 'life insurance	', 'geico', 'dental insurance', 'farmers insurance', 'travel insurance']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -1102,7 +1102,7 @@ res.T.to_csv('vegetables.csv', mode='a', header=True)
 #############################################
 
 print('68 spices')
-keywords = ['salt', 'cumin', 'black pepper', 'Cinnamon', 'Turmeric', 'fennel', 'ginger', 'nutmeg', 'oregano', 'curry']
+keywords = ['salt', 'cumin', 'black pepper', 'cinnamon', 'turmeric', 'fennel', 'ginger', 'nutmeg', 'oregano', 'curry']
 print(len(keywords))
 res = pd.DataFrame()
 
@@ -1134,7 +1134,7 @@ res.T.to_csv('pantry.csv', mode='a', header=True)
 #############################################
 
 print('70 religion')
-keywords = ['Christian', 'bible', 'Catholic', 'church', 'Muslim', 'Islam	', 'jewish', 'synagogue', 'god', 'devil']
+keywords = ['Christian', 'Bible', 'Catholic', 'church', 'Muslim', 'Islam	', 'Jewish', 'synagogue', 'God', 'Devil']
 print(len(keywords))
 res = pd.DataFrame()
 
