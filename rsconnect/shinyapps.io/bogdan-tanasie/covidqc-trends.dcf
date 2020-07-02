@@ -1,0 +1,12 @@
+name: covidqc-trends
+title: covidqc-trends
+username:
+account: bogdan-tanasie
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2371425
+bundleId: 3331985
+url: https://bogdan-tanasie.shinyapps.io/covidqc-trends/
+when: 1593482060.82868
+asMultiple: FALSE
+asStatic: FALSE
