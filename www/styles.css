@@ -72,3 +72,9 @@
 .header {
   margin-top: 3%;
 }
+
+.refText { 
+  font-family: 'Lucida Grande' ,'Times New Roman', Times, Garamond, Helvetica, Sans-Serif;  
+  font-size: 12px;
+  color: white;
+}
