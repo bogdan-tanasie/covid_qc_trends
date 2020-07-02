@@ -2,35 +2,56 @@ library(shiny)
 library(shinyjs)
 library(tableHTML)
 library(plotly)
+library(shinythemes)
+library(shinydashboard)
+library(extrafont)
+library(png)
 
 # Define UI for application that draws a histogram
-fluidPage(
-  radioButtons("lang",
-               label = "",
+fluidPage(class = "page",
+  useShinyjs(),  
+  tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")),
+  br(),
+  div(class = 'lang', 
+              radioButtons(
+               "lang",
+               label = "Language",
                choices = c("English" = "en", "Français" = "fr"),
+               inline = TRUE,
+  )),
+  div(class = 'logo',
+  HTML('<img src="covidlogo_white.png", height="22%", width=22%,
+          style="align: left; width: 100%; height: auto;"/>','<p style="color:white;"></p>')
   ),
-  hr(),
+  br(),
   # Application title
-  useShinyjs(),
-  
-  conditionalPanel(
+  conditionalPanel(class = 'header',
     condition = "input.lang == 'en'",
-    titlePanel("Quebec Google Trends Analysis"),
-  ),
-  conditionalPanel(
+    h1("What are Quebecois searching for during the pandemic?", align="center"),
+    br(),
+    hr(class = 'hr'),
+    h5('We compiled data from Google Trends in Quebec on 700 different keywords across 70 categories beginning on January 1st, 2020. This is a tool to explore and compare the impacts of COVID-19 on our internet search and consumer behavior. This tool allows us to discover certain trends such as how search interest "theater" sharply decreased after the first Quebec case was announced or how "Zoom" has seen a significant increase.'),
+    hr(class = 'hr'),
+    ),
+  conditionalPanel(class = 'header',
     condition = "input.lang == 'fr'",
-    titlePanel("Analyse Google Trends au Québec"),
+    h1("Que recherchent les Québécois pendant la pandémie?",  align="center"),
+    br(),
+    hr(class = 'hr'),
+    h5("Nous avons compilé des données de Google Trends au Québec sur 700 mots clés différents dans 70 catégories à partir du 1er janvier 2020. Il s'agit d'un outil pour explorer et comparer les impacts de COVID-19 sur notre recherche sur Internet et le comportement des consommateurs. Cet outil nous permet de découvrir certaines tendances telles que la façon dont le 'théâtre' d'intérêt pour la recherche a fortement diminué après l'annonce du premier cas au Québec ou comment 'Zoom' a connu une augmentation significative."),
+    hr(class = 'hr'),
   ),
-  
+
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
-    sidebarPanel(
+      sidebarPanel(class = "sidebar",
       # ENGLISH
       conditionalPanel(
         condition = "input.lang == 'en'",
-        
-        helpText("Select a category and keyword you would like to explore."),
+        HTML('<p style="display:inline; color:white; font-size: 12px;">Select a category and keyword you would like to explore.</p>'),
+        br(),
+        p(),
         selectInput("category1", 
                     label = "Category", 
                     choices = list("activities","alcohol", "arts & entertainment", "banks", "repair",
@@ -45,17 +66,15 @@ fluidPage(
                                    "stis", "transportation", "travel", "vegetables", "wedding"
                     ), 
                     selected = NULL),
-        
         selectInput("keyword1", 
                     label = "Keyword", 
                     choices = NULL),
-        
-        checkboxInput("compare","Check to compare graphs", FALSE), 
-        
+        hr(class = 'hr'),
+        checkboxInput("compare","Check to compare trends across different keywords.", FALSE), 
         conditionalPanel(
           condition = "input.compare && input.lang == 'en'",
-          hr(),
-          helpText("Select a category and keyword you would like to compare."),
+          hr(class = 'hr'),
+          HTML('<p style="display:inline; color:white; font-size: 12px;">Select a category and keyword you would like to compare.</p>'),
           selectInput("category2", 
                       label = "Category", 
                       choices = list("activities","alcohol", "arts & entertainment", "banks", "repair",
@@ -75,28 +94,29 @@ fluidPage(
                       label = "Keyword", 
                       choices = NULL),
         ),
-        hr(),
-        HTML('<p style="font-weight: bold; color:black;">Legend:</p>'),
-        HTML('<p style="display:inline; color:black;">First Canada case:</p>'), 
-        HTML('<p style="display:inline; color:green;">Green</p>'),
+        hr(class = 'hr'),
+        p(class ='bold', "Legend"),
+        p('First Canada case: January 25th (blue)'),
         p(),
-        HTML('<p style="display:inline; color:black;">First Quebec case:</p>'), 
-        HTML('<p style="display:inline; color:yellow;">Yellow</p>'),
+        p('First Quebec case: February 27 (violet)'),
         p(),
-        HTML('<p style="display:inline; color:black;">First testing clinics:</p>'), 
-        HTML('<p style="display:inline; color:orange;">Orange</p>'),
+        p('Province shutdown: March 13 (red)'),
         p(),
-        HTML('<p style="display:inline; color:black;">Full province shutdown:</p>'), 
-        HTML('<p style="display:inline; color:red;">Red</p>'),
+        p('Gatherings permitted: May 20 (green)'),
+        hr(class = 'hr'),
+        HTML('<p style="display:inline; color:white; font-size: 12px">By: Bogdan Tanasie</p>'),
         p(),
+        HTML('<p style="display:inline; color:white; font-size: 12px">Faculty advisor: Juan Camilo Serpa</p>'),
         p(),
-        helpText("Source: https://trends.google.com/trends/?geo=CA-QC"),
+        HTML('<p style="display:inline; color:white; font-size: 12px">Source:</p>'),
+        HTML('<a style="display:inline; color:white; font-size: 12px">https://trends.google.com/trends/?geo=CA-QC</a>'), 
       ),
       
       # FRENCH
       conditionalPanel(
         condition = "input.lang == 'fr'",
-        helpText("Sélectionnez une catégorie et un mot-clé que vous souhaitez explorer."),
+        HTML('<p style="display:inline; color:white; font-size: 12px;">Sélectionnez une catégorie et un mot-clé que vous souhaitez explorer.</p>'),
+        p(),
         selectInput("category1fr", 
                     label = "Catégorie", 
                     choices = list("activités","alcool", "culture & loisirs", "banques", "réparation",
@@ -115,13 +135,14 @@ fluidPage(
         selectInput("keyword1fr", 
                     label = "Mot-clé", 
                     choices = NULL),
-        
+        hr(class = 'hr'),
         checkboxInput("comparefr","Comparer les graphiques.", FALSE), 
         
         conditionalPanel(
           condition = "input.comparefr && input.lang == 'fr'",
-          hr(),
-          helpText("Sélectionnez une catégorie et un mot-clé que vous souhaitez comparer."),
+          hr(class = 'hr'),
+          HTML('<p style="display:inline; color:white; font-size: 12px;">Sélectionnez une catégorie et un mot-clé que vous souhaitez comparer.</p>'),
+          p(),
           selectInput("category2fr", 
                       label = "Catégorie", 
                       choices = list("activités","alcool", "culture & loisirs", "banques", "réparation",
@@ -141,44 +162,82 @@ fluidPage(
                       label = "Mot-clé", 
                       choices = NULL),
         ),
-        hr(),
-        HTML('<p style="font-weight: bold; color:black;">Légende:</p>'),
-        HTML('<p style="display:inline; color:black;">Premier cas au Canada:</p>'), 
-        HTML('<p style="display:inline; color:green;">Vert</p>'),
+        hr(class = 'hr'),
+        p("Légende"),
+        p('Premier cas au Canada: 25 janvier (bleu)'),
         p(),
-        HTML('<p style="display:inline; color:black;">Premier cas au Québec:</p>'), 
-        HTML('<p style="display:inline; color:yellow;">Jaune</p>'),
+        p('Premier cas au Québec: 27 février (violet)'),
         p(),
-        HTML('<p style="display:inline; color:black;">Premières cliniques de tests:</p>'), 
-        HTML('<p style="display:inline; color:orange;">Orange</p>'),
+        p('Femeture de la province: 13 mars (rouge)'),
         p(),
-        HTML('<p style="display:inline; color:black;">Fermeture complète de la province:</p>'), 
-        HTML('<p style="display:inline; color:red;">Rouge</p>'),
+        p('Rassemblements permis: 20 may (vert)'),
+        hr(class = 'hr'),
+        HTML('<p style="display:inline; color:white; font-size: 12px">Par: Bogdan Tanasie</p>'),
         p(),
+        HTML('<p style="display:inline; color:white; font-size: 12px">Conseiller pédagogique: Juan Camilo Serpa</p>'),
         p(),
-        helpText("Source: https://trends.google.com/trends/?geo=CA-QC"),
+        HTML('<p style="display:inline; color:white; font-size: 12px">Source:</p>'),
+        HTML('<a style="display:inline; color:white; font-size: 12px">https://trends.google.com/trends/?geo=CA-QC</a>'), 
       )
     ),
     
     # Show a plot of the generated distribution
-    mainPanel(
+    mainPanel(class = "main",
       conditionalPanel(
         condition = "input.lang == 'en'",
         plotlyOutput("graph1"),
-        hr(),
+        hr(class = 'hr'),
+        h5("Interest change after 5 days of event in ", align='center', "%"),
+        box(class = 'stats', uiOutput("stats1a")),
+        box(class = 'stats', uiOutput("stats2a")),
+        box(class = 'stats', uiOutput("stats3a")),
+        box(class = 'stats', uiOutput("stats4a")),
+        box(p()),
+        box(p()),
+        hr(class = 'hr'),
+        p(),
       ),
       conditionalPanel(
         condition = "input.compare && input.lang == 'en'",
-        plotlyOutput("graph2")
+        plotlyOutput("graph2"),
+        hr(class = 'hr'),
+        h5("Interest change after 5 days of event in ", align='center', "%"),
+        box(class = 'stats', uiOutput("stats1b")),
+        box(class = 'stats', uiOutput("stats2b")),
+        box(class = 'stats', uiOutput("stats3b")),
+        box(class = 'stats', uiOutput("stats4b")),
+        box(p()),
+        box(p()),
+        hr(class = 'hr'),
+        p(),
       ),
       conditionalPanel(
         condition = "input.lang == 'fr'",
         plotlyOutput("graph1fr"),
-        hr(),
+        hr(class = 'hr'),
+        h5("Changement d'intérêt après 5 jours d'événement en ", align='center', "%"),
+        box(class = 'stats', uiOutput("stats1afr")),
+        box(class = 'stats', uiOutput("stats2afr")),
+        box(class = 'stats', uiOutput("stats3afr")),
+        box(class = 'stats', uiOutput("stats4afr")),
+        box(p()),
+        box(p()),
+        hr(class = 'hr'),
+        p(),
       ),
       conditionalPanel(
         condition = "input.comparefr && input.lang == 'fr'",
-        plotlyOutput("graph2fr")
+        plotlyOutput("graph2fr"),
+        hr(class = 'hr'),
+        h5("Changement d'intérêt après 5 jours d'événement en ", align='center', "%"),
+        box(class = 'stats', uiOutput("stats1bfr")),
+        box(class = 'stats', uiOutput("stats2bfr")),
+        box(class = 'stats', uiOutput("stats3bfr")),
+        box(class = 'stats', uiOutput("stats4bfr")),
+        box(p()),
+        box(p()),
+        hr(class = 'hr'),
+        p(),
       ),
     )
   )
