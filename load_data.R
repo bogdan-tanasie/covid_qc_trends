@@ -1,5 +1,8 @@
 library(tidyverse)
 
+dates <- read_csv("Data/date.csv")
+attach(dates)
+
 #EN
 activities <- read_csv("Data/activities.csv")
 names(activities)[1] <- "date"
