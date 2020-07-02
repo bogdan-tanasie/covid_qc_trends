@@ -109,7 +109,10 @@ fluidPage(class = "page",
         HTML('<p style="display:inline; color:white; font-size: 12px">Faculty advisor: Juan Camilo Serpa</p>'),
         p(),
         HTML('<p style="display:inline; color:white; font-size: 12px">Source:</p>'),
-        HTML('<a style="display:inline; color:white; font-size: 12px">https://trends.google.com/trends/?geo=CA-QC</a>'), 
+        tags$a(class='refText', href="https://trends.google.com/trends/?geo=CA-QC", "https://trends.google.com/trends/?geo=CA-QC"),
+        p(),
+        HTML('<p style="display:inline; color:white; font-size: 12px">Code:</p>'),
+        tags$a(class='refText', href="https://github.com/bogdan-tanasie/covid_qc_trends", "https://github.com/bogdan-tanasie/covid_qc_trends"),
       ),
       
       # FRENCH
@@ -177,7 +180,10 @@ fluidPage(class = "page",
         HTML('<p style="display:inline; color:white; font-size: 12px">Conseiller pédagogique: Juan Camilo Serpa</p>'),
         p(),
         HTML('<p style="display:inline; color:white; font-size: 12px">Source:</p>'),
-        HTML('<a style="display:inline; color:white; font-size: 12px">https://trends.google.com/trends/?geo=CA-QC</a>'), 
+        tags$a(class='refText', href="https://trends.google.com/trends/?geo=CA-QC", "https://trends.google.com/trends/?geo=CA-QC"),
+        p(),
+        HTML('<p style="display:inline; color:white; font-size: 12px">Code:</p>'),
+        tags$a(class='refText', href="https://github.com/bogdan-tanasie/covid_qc_trends", "https://github.com/bogdan-tanasie/covid_qc_trends"),
       )
     ),
     
